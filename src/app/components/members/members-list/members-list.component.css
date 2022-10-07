@@ -68,6 +68,13 @@ table .heading-right {
     border-bottom-right-radius: 1em;
 }
 
+.cells a{
+    color: black;
+}
+
+.cells a:hover{
+    color: #edf2f4;
+}
 
 
 
