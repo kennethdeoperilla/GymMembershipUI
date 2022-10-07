@@ -1,0 +1,44 @@
+<div class="container my-5">
+    <h2 class="mb-3">Edit Member</h2>
+
+    <form #form="ngForm" (ngSubmit)="updateMember()" >
+        <div class="col-6">
+            <div class="mb-3">
+                <label for="name" class="form-label">ID</label>
+                <input type="text" class="form-control" id="id" placeholder="" name="id" readonly [(ngModel)]="memberDetails.id">
+            </div>
+            <div class="mb-3">
+                <label for="id" class="form-label">First Name</label>
+                <input type="text" class="form-control" id="firstName" placeholder="Enter First Name" name="firstName" [(ngModel)]="memberDetails.firstName">
+            </div>
+            <div class="mb-3">
+                <label for="" class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="lastName" placeholder="Enter Last Name" name="lastName" [(ngModel)]="memberDetails.lastName">
+            </div>
+            <!-- <div class="mb-3">
+                <label for="formGroupExampleInput2" class="form-label">Gender</label>
+                <input type="text" class="form-control" id="formGroupExampleInput2"
+                    placeholder="Another input placeholder">
+            </div> -->
+            <div class="col-12 mb-3">
+                <label for="" class="form-label">Gender</label>
+                <select class="form-select" id="gender" name="gender" [(ngModel)]="memberDetails.gender" >
+                    <option selected>Choose...</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="" class="form-label">Address</label>
+                <input type="text" class="form-control" id="address" placeholder="Enter Address" name="address" [(ngModel)]="memberDetails.address">
+            </div>
+            <div class="mb-3">
+                <label for="" class="form-label">Contact Number</label>
+                <input type="text" class="form-control" id="contactNumber" placeholder="Enter Contact Number" name="contactNumber" [(ngModel)]="memberDetails.contactNumber">
+            </div>
+
+            <button class="btn btn-primary" type="submit">Save</button>
+            <button class="btn btn-danger" type="button" (click)="deleteMember()">Delete</button>
+        </div>
+    </form>
+</div>
