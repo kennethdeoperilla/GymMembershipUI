@@ -11,7 +11,6 @@
         </div>
         <div class="col-3 mb-3">
             <select class="form-select" id="gender" name="gender" [(ngModel)]="genderValue">
-                <option selected>Choose...</option>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
             </select>
@@ -37,7 +36,8 @@
                 <td>{{ member.gender }}</td>
                 <td>{{ member.address }}</td>
                 <td>{{ member.contactNumber }}</td>
-                <td><a [routerLink]="['/members','edit', member.id]">View</a></td>
+                <!-- <td><a [routerLink]="['/members','edit', member.id]">Edit</a></td> -->
+                <button style="margin-top: 5px;" class="btn btn-primary" type="button" (click)="viewMember(member.id)">View Details</button>
             </tr>
         </table>
     </div>

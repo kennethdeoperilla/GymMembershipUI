@@ -10,12 +10,8 @@ export class GenderfilterPipe implements PipeTransform {
     if(!members || !genderValue){
       return members;
     }
-    return members.filter(member=>
-      member.gender.toLocaleLowerCase().includes(genderValue.toLocaleLowerCase()),
-      
-      )
-      
-      console.log(members)
+    return members.filter(member=> 
+      member.gender.toUpperCase() === genderValue.toUpperCase());
   }
 
 }

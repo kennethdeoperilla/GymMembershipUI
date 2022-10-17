@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Member } from 'src/app/models/member.model';
 import { MembersService } from 'src/app/service/members.service';
 
@@ -14,19 +15,23 @@ export class MembersListComponent implements OnInit {
   searchValue: string = '';
   genderValue: string = '';
   // memCount: string = '9';
-  mem_Count = this.members.length;
+  mem_Count: number = 0;
   // memCount = this.members;
   
 
-  constructor(private membersService: MembersService) {
+  constructor(
+    private membersService: MembersService,
+    public router: Router
+    ) {
   }
 
   ngOnInit(): void {
     this.membersService.getAllMembers().subscribe({
       next: (members) => {
-        // console.log(members)
+        //console.log(members)
         this.members = members;
-        console.log(members.length)
+        //console.log(members.length)
+        this.mem_Count = members.length;
         // console.log(this.memberCount())
       },
       // error: (members) =>
@@ -38,6 +43,11 @@ export class MembersListComponent implements OnInit {
 
   
 
+  }
+
+  viewMember(memberId: any){
+    //console.log("View member!");
+    this.router.navigateByUrl('members/edit/' + memberId);
   }
 
 
